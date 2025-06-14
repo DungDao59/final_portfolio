@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Contact</title>
+    <link href="static/css/style.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Bagel Fat One' rel='stylesheet'>
+    <link rel="icon" type="image/x-icon" href="static/images/person-lines-fill  .svg">
+</head>
+
+<body
+    style="background-image: url('static/images/contact-page/contact-background.jpg'); background-repeat: no-repeat; background-size: cover; height: 100%;background-attachment: fixed;">
+    <div class="page-container">
+        {% include 'header.html' %}
+        <div class="main-content">
+            <article class="article-rise">
+                <h1 style="color:#cc6f5c; font-size: 60px; letter-spacing: 2px ">📱 My contact</h1>
+                <hr>
+                <div class="contact-container">
+                    <ol class="contact-list">
+                        <li><b>Email:</b> khoaimi59@gmail.com</li>
+                        <li class="inline-item">
+                            <strong>Facebook:</strong>
+                            <a href="https://www.facebook.com/aotiendung.986613">My Facebook Profile</a>
+                        </li>
+                        <li class="inline-item">
+                            <strong>Instagram:</strong>
+                            <a href="https://www.instagram.com/_dtdx.24_/">My Instagram Profile</a>
+                        </li>
+                        <li>
+                            <strong>Phone:</strong> 0903475350
+                        </li>
+                    </ol>
+                    <div class="line-with-text">
+                        <span>* Direct Message</span>
+                    </div>
+                    <form action="{{url_for('contact')}}" method="post">
+                        <div class="input-group">
+                            <input type="text" name="name" required>
+                            <label>Name</label>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" name="email" required>
+                            <label>Email</label>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" name="message" required>
+                            <label>Message</label>
+                        </div>
+                        <div class="article-button-container">
+                            <button class="fancy-button">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </article>
+        </div>
+        {% with messages = get_flashed_messages(with_categories = true) %}
+            {% if messages %}
+            <div class="flash-container">
+                {% for category, message in messages %}
+                <input type="checkbox" class="flash-toggle" id="flash-toggle-{{ loop.index }}" hidden>
+                <div class="flash-message {{ category }}">
+                    <label for="flash-toggle-{{ loop.index }}" class="flash-close">&times;</label>
+                    {{ message }}
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+        {% endwith %}
+        <footer class="site-footer" style="background: rgba(255,255,255,0.5);color: black;padding: 10px 20px;font-size: 15px;text-align: center;border-top: 1px solid rgba(255, 255, 255, 0.1);">
+            <p class="animate-on-load">© 2025 Designed & Developed by Dao Tien Dung | <a href="#top">Back to Top</a></p>
+        </footer>
+    </div>
+</body>
+
+</html>

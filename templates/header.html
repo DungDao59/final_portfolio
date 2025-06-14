@@ -1,0 +1,50 @@
+<input type="checkbox" id="sidebar-toggle" hidden>
+
+<label for="sidebar-toggle" class="toggle-btn">☰</label>
+
+<div class="side-nav">
+    <label for="sidebar-toggle" class="close-btn">✕</label>
+    <div class="nav-top">
+        <a href="{{url_for('home') }}">
+            <div class="home">
+                <img src="static/images/house.svg" class="home-img" alt="Home icon">
+                <p>Home</p>
+            </div>
+        </a>
+        <hr class="sidebar-divider">
+        <ul>
+            <li>
+                <a href="{{ url_for('strength') }}">
+                    <img src="static/images/person-arms-up.svg" alt="Strength icon">
+                    <p>Strength</p>
+                </a>
+            </li>
+            <li>
+                <a href="{{url_for('hobby')}}">
+                    <img src="static/images/controller.svg" alt="Hobby icon">
+                    <p>Hobby</p>
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('achievements')}}">
+                    <img src="static/images/trophy.svg" alt="Achievements icon">
+                    <p>Achievements</p>
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('dream') }}">
+                    <img src="static/images/cloud.svg" alt="Dream icon">
+                    <p>Dream</p>
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('contact') }}">
+                    <img src="static/images/person-lines-fill.svg" alt="Contact icon">
+                    <p>Contact</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
